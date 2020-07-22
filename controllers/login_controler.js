@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bCrypt = require("bcryptjs");
-const { body } = require('express-validator/check');
+const { body } = require("express-validator/check");
 
 const UserModel = require("../models/store_admin");
 const CustomerModel = require("../models/customer");
@@ -53,8 +53,7 @@ module.exports.loginUser = async (req, res, next) => {
                   user: userExist,
                 },
               });
-            } 
-            else {
+            } else {
               res.status(401).json({
                 success: false,
                 message: "Invalid Password.",
